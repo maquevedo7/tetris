@@ -1,7 +1,7 @@
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById("score");
-
+const topScore = document.getElementById("topScore");
 const ROW = 16;
 const COL = 10;
 const square = 40; //square size
@@ -114,9 +114,9 @@ Piece.prototype.moveDown = function () {
 Piece.prototype.moveRight = function () {
     if (!this.collision(1, 0, this.activeTetromino)) {
         this.unDraw();
-        this.x++;
+        this.x++; //right
         this.draw();
-        p.requestAnimationFrame(drop);
+        p.requestAnimationFrame(drop); //move down
     }
 };
 
@@ -124,9 +124,9 @@ Piece.prototype.moveRight = function () {
 Piece.prototype.moveLeft = function () {
     if (!this.collision(-1, 0, this.activeTetromino)) {
         this.unDraw();
-        this.x--;
+        this.x--; //left
         this.draw();
-        p.requestAnimationFrame(drop);
+        p.requestAnimationFrame(drop); //move down
     }
 };
 
@@ -155,7 +155,7 @@ Piece.prototype.rotate = function () {
         this.activeTetromino = this.tetromino[this.tetrominoN];
         this.draw();
     }
-    p.requestAnimationFrame(drop);
+    p.requestAnimationFrame(drop); //move down
 };
 
 let score = 0;
@@ -277,8 +277,11 @@ function drop() {
 
 function start() {
     drop();
+    topScore.innerHTML = topScore2;
 }
 
 function refresh() {
+    let topScore2 = [score];
+    topScore.innerHTML = topScore2;
     location.reload();
 }
