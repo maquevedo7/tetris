@@ -104,6 +104,7 @@ Piece.prototype.moveDown = function () {
         this.unDraw();
         this.y++;
         this.draw();
+        piece.requestAnimationFrame(drop); 
     } else {
         // we lock the piece and generate a new one
         this.lock();
@@ -117,6 +118,7 @@ Piece.prototype.moveRight = function () {
         this.unDraw();
         this.x++;
         this.draw();
+        piece.requestAnimationFrame(drop); 
     }
 };
 
@@ -126,6 +128,7 @@ Piece.prototype.moveLeft = function () {
         this.unDraw();
         this.x--;
         this.draw();
+        piece.requestAnimationFrame(drop); 
     }
 };
 
@@ -240,7 +243,7 @@ document.addEventListener("keydown", CONTROL);
 function CONTROL(event) {
     if (event.keyCode == 37) {
         p.moveLeft();
-        dropStart = Date.now();
+        dropStart = Date.now();        
     } else if (event.keyCode == 38) {
         p.rotate();
         dropStart = Date.now();
@@ -264,7 +267,7 @@ function drop() {
         dropStart = Date.now();
     }
     if (!gameOver) {
-        requestAnimationFrame(drop);
+        requestAnimationFrame(drop); 
     }
 }
 

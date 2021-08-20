@@ -23,3 +23,10 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
 }
+
+.start {
+
+    color: black;
+    background-color: rgb(255, 83, 112);
+
+}
