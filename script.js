@@ -103,7 +103,6 @@ Piece.prototype.moveDown = function () {
         this.unDraw();
         this.y++;
         this.draw();
-        piece.requestAnimationFrame(drop); 
     } else {
         // we lock the piece and generate a new one
         this.lock();
@@ -245,7 +244,7 @@ document.addEventListener("keydown", CONTROL);
 function CONTROL(event) {
     if (event.keyCode == 37) {
         p.moveLeft();
-        dropStart = Date.now();        
+        dropStart = Date.now();
     } else if (event.keyCode == 38) {
         p.rotate();
         dropStart = Date.now();
@@ -270,7 +269,7 @@ function drop() {
         dropStart = Date.now();
     }
     if (!gameOver) {
-        requestAnimationFrame(drop); 
+        requestAnimationFrame(drop);
     }
 }
 drop();
