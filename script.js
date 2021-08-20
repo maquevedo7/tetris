@@ -211,7 +211,7 @@ function randomp() {
 let p = randomp();
 
 //object piece
-
+//construction function
 function piece(tetromino, color) {
     this.tetromino = tetromino;
     this.color = color;
@@ -242,10 +242,10 @@ piece.prototype.fill = function (color) {
 piece.prototype.draw = function () {
     this.fill(this.color);
 };
-//p.draw();
+p.draw();
 
 //undraw a piece
-
+/*
 piece.prototype.unDraw = function () {
     this.fill(VACANT);
-};
+};*/
