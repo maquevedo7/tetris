@@ -98,7 +98,6 @@ Piece.prototype.unDraw = function () {
 };
 
 // move Down the piece
-
 Piece.prototype.moveDown = function () {
     if (!this.collision(0, 1, this.activeTetromino)) {
         this.unDraw();
@@ -118,7 +117,7 @@ Piece.prototype.moveRight = function () {
         this.unDraw();
         this.x++;
         this.draw();
-        piece.requestAnimationFrame(drop); 
+        p.requestAnimationFrame(drop);
     }
 };
 
@@ -128,7 +127,7 @@ Piece.prototype.moveLeft = function () {
         this.unDraw();
         this.x--;
         this.draw();
-        piece.requestAnimationFrame(drop); 
+        p.requestAnimationFrame(drop);
     }
 };
 
@@ -142,9 +141,11 @@ Piece.prototype.rotate = function () {
         if (this.x > COL / 2) {
             // it's the right wall
             kick = -1; // we need to move the piece to the left
+            p.moveDown();
         } else {
             // it's the left wall
             kick = 1; // we need to move the piece to the right
+            p.moveDown();
         }
     }
 
@@ -155,6 +156,7 @@ Piece.prototype.rotate = function () {
         this.activeTetromino = this.tetromino[this.tetrominoN];
         this.draw();
     }
+    p.requestAnimationFrame(drop);
 };
 
 let score = 0;
@@ -259,6 +261,7 @@ function CONTROL(event) {
 
 let dropStart = Date.now();
 let gameOver = false;
+
 function drop() {
     let now = Date.now();
     let delta = now - dropStart;
@@ -270,5 +273,4 @@ function drop() {
         requestAnimationFrame(drop); 
     }
 }
-
 drop();
