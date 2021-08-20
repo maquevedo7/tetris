@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,14 +8,20 @@
         <title>tetris</title>
     </head>
     <body>
-        <!-- CANVAS -->
+        <div class="game">
+            <div class="txt">
+                <h1>TETRIS</h1>
+                <span>Top Score :</span><span id="topScore">0</span>
+                <span>Score :</span><span id="score">0</span>
+            </div>
 
-        <canvas id="myCanvas" width="400" height="640"></canvas>
-        <div>
-            Score :
-            <div id="score">0</div>
+            <div class="canvas">
+                <canvas id="tetris" width="400" height="640"></canvas>
+            </div>
         </div>
+
         <!-- SCRIPTS -->
+        <script src="./pieces.js"></script>
         <script src="./script.js"></script>
     </body>
 </html>

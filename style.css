@@ -1,13 +1,25 @@
-canvas {
-    background-color: pink;
-}
-
-#score {
-    display: inline-block;
-}
-div {
+* {
     font-size: 25px;
     font-weight: bold;
     font-family: monospace;
+}
+
+.canvas {
+    background-color: pink;
+    width: 400;
+    height: 640;
+}
+
+.txt {
+    grid-column: 1/2;
     text-align: center;
+    align-content: center;
+}
+.game {
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
