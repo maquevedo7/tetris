@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./style.css" />
-        <!-- STYLES -->
-        <title>tetris</title>
-    </head>
-    <body>
-        <h1>Tetris</h1>
+<html>
+<head>
+    <title>Tetris Game JS</title>
 
-        <!-- CANVAS -->
+</head>
+<body>
 
-        <canvas id="myCanvas"></canvas>
-        
-        <!-- SCRIPTS -->
-        <script src="./script.js"></script>
-    </body>
+    <div class="game">
+
+        <div class="txt">
+
+            <h1>TETRIS</h1>
+            <span>Top Score :</span><span id="topScore">0</span>
+            <span>Score :</span><span id="score">0</span>
+
+        </div>
+    
+        <div class="canvas">
+
+            <canvas id="tetris" width="400" height="640"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./pieces.js"></script>
+    <script src="./script.js"></script>
+
+</body>
 </html>
