@@ -1,7 +1,6 @@
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById("score");
-const topScore = document.getElementById("topScore");
 const ROW = 16;
 const COL = 10;
 const square = 40; //square size
@@ -40,7 +39,7 @@ drawBoard();
 // the pieces and their colors
 
 const PIECES = [
-    [Z, "red"],
+    [Z, "red", "black"],
     [S, "green"],
     [T, "yellow"],
     [O, "blue"],
@@ -277,11 +276,8 @@ function drop() {
 
 function start() {
     drop();
-    topScore.innerHTML = topScore2;
 }
 
 function refresh() {
-    let topScore2 = [score];
-    topScore.innerHTML = topScore2;
     location.reload();
 }

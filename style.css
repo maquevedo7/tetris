@@ -1,64 +1,49 @@
 * {
-
     font-size: 25px;
     font-weight: bold;
     font-family: monospace;
-
+    box-sizing: border-box;
 }
 
 .canvas {
-
     width: 400;
     height: 640;
-
 }
 
 div {
-
-    padding: 30px;
-
+    padding: 10px;
 }
 
 .txt {
-
     grid-column: 1/2;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-content: center;
-
 }
 
 .scores {
-
     display: flex;
     flex-direction: column;
     text-align: center;
     align-content: center;
-
 }
 
 .txt h1 {
-
     font-size: 70px;
-
 }
 
 .game {
-
     margin: 0 auto;
     width: 80%;
     height: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 50px;
+    padding-top: 10px;
     align-items: center;
-
 }
 
 .start {
-
     color: black;
     background-color: rgb(255, 83, 112);
-
 }
